@@ -35,7 +35,7 @@ const lib = {
         return string.charAt(0).toUpperCase() + string.slice(1);
     },
 
-    slugify: function(text) {
+    slugify: function(string) {
         return text
             .toString()
             .normalize('NFD') // normalize Unicode
