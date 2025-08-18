@@ -13,4 +13,4 @@ These are mainly tailored to my own needs. Currently this is not my active proje
 Download the personal_js_lib.js file, and add it to your project folder/wherever you wish. Check the specified path of the library, then use `<script src="path_to_the_js_lib"></script>` (but specify your own path).
 
 Example usage:
-Running `lib.clamp(1000, 0, 100)` returns `100`.
+Running `console.log(lib.clamp(1000, 0, 100));` outputs `100` in the terminal.
