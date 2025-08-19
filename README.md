@@ -1,21 +1,21 @@
 # personal_js_lib
 
 A collection of features that I wish vanilla JavaScript had, such as clamp, and some features I depend on, such as generating a random integer between two values.
-These are mainly tailored to my own needs. Currently, this is not an active project of mine - you can expect features to come monthly.
+These are mainly tailored to my own needs. Currently, this is not an active project of mine; you can expect new features to be added monthly.
 
 **A CDN/server might be planned for the future. Use this library locally for now. Sorry!**
 
 ## Current features
 ### Math
-- `randomNumber(min, max)` generates a random integer between `min` and `max`. Inclusive.
-- `clamp(value, min, max)` returns `value` clamped between `min` and `max`. Inclusive.
-- `lerp(start, end, amount)` performs linear interpolation on `start` and `end`, based on the weighting factor, `amount`.
-- `map(value, inMin, inMax, outMin, outMax)` maps value from the input range defined by `inMin` and `inMax` to the output range defined by `outMin` and `outMax`.
+- `lib.randomNumber(min, max)` generates a random integer between `min` and `max`. Inclusive.
+- `lib.clamp(value, min, max)` returns `value` clamped between `min` and `max`. Inclusive.
+- `lib.lerp(start, end, amount)` performs linear interpolation on `start` and `end`, based on the weighting factor, `amount`.
+- `lib.map(value, inMin, inMax, outMin, outMax)` maps value from the input range defined by `inMin` and `inMax` to the output range defined by `outMin` and `outMax`.
 If `inMin === inMax`, the function will result in a division by zero.
 ### Strings
-- `stringIsEmpty(string)` returns `true` if the string is empty (`""`), and false otherwise.
-- `capitalizeFirstLetterOfString(string)` returns `string`, but with the first letter of the string capitalized. For example, `"example string"` would result in `"Example string"`.
-- `slugify(string)` alters `string` into a human-readable URL slug. The full process:
+- `lib.stringIsEmpty(string)` returns `true` if the string is empty (`""`), and false otherwise.
+- `lib.capitalizeFirstLetterOfString(string)` returns `string`, but with the first letter of the string capitalized. For example, `"example string"` would result in `"Example string"`.
+- `lib.slugify(string)` alters `string` into a human-readable URL slug. The full process:
   1. Normalize Unicode
   2. Remove diatrics
   3. String to lowercase
@@ -23,9 +23,18 @@ If `inMin === inMax`, the function will result in a division by zero.
   5. Replace spaces with hyphens
   6. Replace non-word characters except for hyphens
   7. Replace multiple hyphens with one
+ 
+### Objects
+- `lib.objectIsEmpty(object)` returns true if `object` has no properties, returns false otherwise.
+- `lib.objectPropertiesLength(object)` returns the number of enumerable properties in `object` as a number.
+- `lib.isPlainObject(object)` determines whether `object` is a plain object (i.e., not an array, function, or other built-in type).
+
+### Time
+- `lib.isLeapYear(year)` returns true if `year` is a leap year, returns false otherwise.
+- `lib.daysInMonth(month, year)` returns the days in `month` as a number. `year` is needed to account for leap years.
 
 ## Usage
-Download the personal_js_lib.js file, and add it to your project folder/wherever you wish. Check the specified path of the library, then use `<script src="path_to_the_js_lib"></script>` (but specify your path).
+Download the personal_js_lib.js file, and add it to your project folder/wherever you wish. Check the specified path of the library, then use `<script src="path_to_the_js_lib"></script>` (but select your path).
 
 Example usage:
-Running `console.log(lib.clamp(1000, 0, 100));` outputs `100` in the terminal.
+Running `console.log(lib.clamp(1000, 0, 100));` outputs `100`.
