@@ -21,6 +21,22 @@ const lib = {
     map: function(value, inMin, inMax, outMin, outMax) {
       return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
     },
+
+    areaOfCircleByRadius: function(radius) {
+        return radius ^ 2 * Math.PI;
+    },
+
+    areaOfCircleByDiameter: function(diameter) {
+        return (diameter / 2) ^ 2 * Math.PI;
+    },
+
+    circumferenceOfCircleByRadius: function(radius) {
+        return radius * 2 * Math.PI;
+    },
+
+    circumferenceOfCircleByDiameter: function(diameter) {
+        return diameter * Math.PI;
+    }
     
     // STRINGS
     stringIsEmpty: function(string) {
@@ -75,5 +91,10 @@ const lib = {
 
     daysInMonth: function(month, year) {
         return new Date(year, month, 0).getDate();
+    },
+
+    // ARRAYS
+    unique: function(array) {
+        return [...new Set(array)];
     }
 }
