@@ -12,6 +12,10 @@ These are mainly tailored to my own needs. Currently, this is not an active proj
 - `lib.lerp(start, end, amount)` performs linear interpolation on `start` and `end`, based on the weighting factor, `amount`.
 - `lib.map(value, inMin, inMax, outMin, outMax)` maps value from the input range defined by `inMin` and `inMax` to the output range defined by `outMin` and `outMax`.
 If `inMin === inMax`, the function will result in a division by zero.
+- `lib.areaOfCircleByRadius(radius)` returns the area of a circle given its radius. Uses the formula π * r².
+- `lib.areaOfCircleByDiameter(diameter)` returns the area of a circle given its diameter. Internally converts diameter to radius and applies the formula π * r².
+- `lib.circumferenceOfCircleByRadius(radius)` returns the circumference of a circle given its radius. Uses the formula 2 * π * r.
+- `lib.circumferenceOfCircleByDiameter(diameter)` returns the circumference of a circle given its diameter. Uses the formula π * d.
 ### Strings
 - `lib.stringIsEmpty(string)` returns `true` if the string is empty (`""`), and false otherwise.
 - `lib.capitalizeFirstLetterOfString(string)` returns `string`, but with the first letter of the string capitalized. For example, `"example string"` would result in `"Example string"`.
@@ -32,6 +36,9 @@ If `inMin === inMax`, the function will result in a division by zero.
 ### Time
 - `lib.isLeapYear(year)` returns true if `year` is a leap year, returns false otherwise.
 - `lib.daysInMonth(month, year)` returns the days in `month` as a number. `year` is needed to account for leap years.
+
+### Array
+- `lib.unique(array)` returns a new array with only the unique elements from the input array, removing any duplicates.
 
 ## Usage
 Download the personal_js_lib.js file, and add it to your project folder/wherever you wish. Check the specified path of the library, then use `<script src="path_to_the_js_lib"></script>` (but select your path).
