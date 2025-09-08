@@ -36,7 +36,7 @@ const lib = {
 
     circumferenceOfCircleByDiameter: function(diameter) {
         return diameter * Math.PI;
-    }
+    },
     
     // STRINGS
     stringIsEmpty: function(string) {
@@ -96,5 +96,17 @@ const lib = {
     // ARRAYS
     unique: function(array) {
         return [...new Set(array)];
+    },
+
+    // FILES
+    getFile: async function() {
+      const [fileHandle] = await window.showOpenFilePicker();
+      const file = await fileHandle.getFile();
+      return file;
+    },
+
+    getFileWithOpts: async function(options) {
+          const [fileHandle] = await window.showOpenFilePicker(options);
+          const fileData = await fileHandle.getFile();
     }
 }
