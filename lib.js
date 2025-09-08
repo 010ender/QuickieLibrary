@@ -80,6 +80,10 @@ const lib = {
         return Object.prototype.toString.call(object) === '[object Object]';
     },
 
+    cleanObject: function(object) {
+        return Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != null && v !== ''));
+    }
+
     // TIME
     isLeapYear: function(year) {
         year = Number(year);
