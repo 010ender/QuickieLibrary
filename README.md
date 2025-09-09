@@ -40,7 +40,10 @@ If `inMin === inMax`, the function will result in a division by zero.
 
 ### Files
 - `lib.getFile()` shows the file picker, then when the user selects a file, it returns a `File` object.
-- `lib.getFileWithOpts(options)` shows the file picker configured by `options`, then when the user selects a file, it returns a `File` object. Refer to Mozilla docs for configuring the file picker: [here](https://developer.mozilla.org/en-US/docs/Web/API/Window/showOpenFilePicker#parameters).
+- `lib.getFileWithOpts(options)` shows the file picker configured by `options`, then when the user selects a file, it returns a `File` object. Refer to Mozilla docs for configuring the file picker: [here](https://developer.mozilla.org/en-US/docs/Web/API/Window/showOpenFilePicker#parameters). If `options` is not defined, an error is returned.
+
+### Misc
+- `lib.smartGetType(value)` returns the type of `value`. It is more advanced than JavaScript's `typeof` as it can recognize arrays, dates, etc (eg: `new Error` returns `"error"`).
 
 ## Usage
 Download the personal_js_lib.js file, and add it to your project folder/wherever you wish. Check the specified path of the library, then use `<script src="path_to_the_js_lib"></script>` (but select your path).
