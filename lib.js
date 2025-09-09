@@ -82,7 +82,7 @@ const lib = {
 
     cleanObject: function(object) {
         return Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != null && v !== ''));
-    }
+    },
 
     // TIME
     isLeapYear: function(year) {
@@ -103,14 +103,29 @@ const lib = {
     },
 
     // FILES
-    getFile: async function() {
-      const [fileHandle] = await window.showOpenFilePicker();
-      const file = await fileHandle.getFile();
-      return file;
-    },
+	getFileWithOpts: async function(options) {
+  		try {
+        if(options === undefined) {
+          return "Error: define options";
+        }
+    		const [fileHandle] = await window.showOpenFilePicker(options);
+    		return await fileHandle.getFile();
+  		} catch (error) {
+    		return "Error: " + error;
+  		}
+	},
 
-    getFileWithOpts: async function(options) {
-          const [fileHandle] = await window.showOpenFilePicker(options);
-          const fileData = await fileHandle.getFile();
+	getFile: async function() {
+  		try {
+    		const [fileHandle] = await window.showOpenFilePicker();
+    		return await fileHandle.getFile();
+  		} catch (error) {
+    		return "Error: " + error;
+  		}
+	},
+
+    // MISC
+    smartGetType: function(value) {
+        return Object.prototype.toString.call(value).slice(8, -1).toLowerCase();
     }
 }
