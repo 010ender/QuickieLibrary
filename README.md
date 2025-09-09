@@ -44,6 +44,21 @@ If `inMin === inMax`, the function will result in a division by zero.
 
 ### Misc
 - `lib.smartGetType(value)` returns the type of `value`. It is more advanced than JavaScript's `typeof` as it can recognize arrays, dates, etc (eg: `new Error` returns `"error"`).
+  This smart type detection can recognize these JS + Node.js types:
+  1. null
+  2. undefined
+  3. NaN
+  4. Infinity
+  5. Symbols
+  6. BigInts
+  7. Functions
+  8. Dates
+  9. DOM objects
+  10. Objects
+  11. Arrays
+  12. Buffers (specific to Node.js only)
+  13. Proxies (outputs as "object")
+  14. Revoked proxy (outputs as "proxy:revoked")
 
 ## Usage
 Download the personal_js_lib.js file, and add it to your project folder/wherever you wish. Check the specified path of the library, then use `<script src="path_to_the_js_lib"></script>` (but select your path).
