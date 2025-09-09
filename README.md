@@ -63,5 +63,11 @@ If `inMin === inMax`, the function will result in a division by zero.
 ## Usage
 Download the personal_js_lib.js file, and add it to your project folder/wherever you wish. Check the specified path of the library, then use `<script src="path_to_the_js_lib"></script>` (but select your path).
 
-Example usage:
-Running `console.log(lib.clamp(1000, 0, 100));` outputs `100`.
+## Examples
+Possible outcomes:
+
+`console.log(lib.clamp(1000, 0, 100));` would output `100`.
+
+`console.log(lib.smartGetType(() => {}))` would output `"function"`
+
+`console.log(lib.randomNumber(20, 100))` *could* output `45`
