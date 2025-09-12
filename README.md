@@ -30,6 +30,7 @@ If `inMin === inMax`, the function will result in a division by zero.
 - `lib.objectIsEmpty(object)` returns true if `object` has no properties, returns false otherwise.
 - `lib.objectPropertiesLength(object)` returns the number of enumerable properties in `object` as a number.
 - `lib.isPlainObject(object)` determines whether `object` is a plain object (i.e., not an array, function, or other built-in type).
+- `lib.cleanObject(object)` returns `object` that has removed null, undefined, or empty values.
 
 ### Time
 - `lib.isLeapYear(year)` returns true if `year` is a leap year, returns false otherwise.
