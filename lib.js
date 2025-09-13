@@ -106,6 +106,31 @@ const lib = {
         }
     },
 
+    validJSON: function(string) {
+        try {
+            JSON.parse(string);
+            return true;
+        } catch (error) {
+            return false;
+        }
+    },
+
+    copyTextToClipboard: function(string) {
+        try {
+            return navigator.clipboard.writeText(str);
+        } catch (error) {
+            return `Error: ${error.message}`
+        }
+    },
+
+    readClipboardAsText: function(string) {
+        try {
+            return navigator.clipboard.readText().then((clipText) => (document.querySelector(".editor").innerText += clipText));
+        } catch (error) {
+            return `Error: ${error.message}`
+        }
+    }
+
     // OBJECTS
     objectIsEmpty: function(object) {
         try {
@@ -136,6 +161,14 @@ const lib = {
             return Object.fromEntries(Object.entries(object).filter(([_, v]) => v != null && v !== ''));
         } catch (error) {
             return `Error: ${error.message}`;
+        }
+    },
+
+    falsy: function(value) {
+        try {
+            return !value;
+        } catch (error) {
+            return `Error: ${error.message}`
         }
     },
 
