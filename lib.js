@@ -129,7 +129,7 @@ const lib = {
         } catch (error) {
             return `Error: ${error.message}`
         }
-    }
+    },
 
     // OBJECTS
     objectIsEmpty: function(object) {
