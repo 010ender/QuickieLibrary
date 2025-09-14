@@ -123,7 +123,7 @@ const lib = {
         }
     },
 
-    readClipboardAsText: function(string) {
+    readClipboardAsText: function() {
         try {
             return navigator.clipboard.readText().then((clipText) => (document.querySelector(".editor").innerText += clipText));
         } catch (error) {
