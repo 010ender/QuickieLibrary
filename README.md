@@ -25,12 +25,16 @@ If `inMin === inMax`, the function will result in a division by zero.
   5. Replace spaces with hyphens
   6. Replace non-word characters except for hyphens
   7. Replace multiple hyphens with one
+- `lib.validJSON(string)` returns `true` if `string` is valid JSON, otherwise returns `false`.
+- `lib.copyTextToClipboard(string)` copies `string` as text to the clipboard, returning a `Promise` that is resolved when the clipboard has been updated. **Needs `"clipboardRead"` or `"clipboardWrite"` permissions and only works in secure contexts**.
+- `lib.readClipboardAsText()` is a `Promise` that returns a string of the textual contents of the clipboard. Returns an empty string if the clipboard is empty or does not contain text. **Needs `"clipboardRead"` or `"clipboardWrite"` permissions and only works in secure contexts**.
  
 ### Objects
 - `lib.objectIsEmpty(object)` returns true if `object` has no properties, returns false otherwise.
 - `lib.objectPropertiesLength(object)` returns the number of enumerable properties in `object` as a number.
 - `lib.isPlainObject(object)` determines whether `object` is a plain object (i.e., not an array, function, or other built-in type).
 - `lib.cleanObject(object)` returns `object` that has removed null, undefined, or empty values.
+- `lib.falsy(value)` determines if `value` is falsy, returning either `false` or `true`.
 
 ### Time
 - `lib.isLeapYear(year)` returns true if `year` is a leap year, returns false otherwise.
@@ -44,8 +48,8 @@ If `inMin === inMax`, the function will result in a division by zero.
 - `lib.getFileWithOpts(options)` shows the file picker configured by `options`, then when the user selects a file, it returns a `File` object. Refer to Mozilla docs for configuring the file picker: [here](https://developer.mozilla.org/en-US/docs/Web/API/Window/showOpenFilePicker#parameters). If `options` is not defined, an error is returned.
 
 ### Misc
-- `lib.smartGetType(value)` returns the type of `value`. It is more advanced than JavaScript's `typeof` as it can recognize arrays, dates, etc (eg: `new Error` returns `"error"`).
-  This smart type detection can recognize these JS + Node.js types:
+- `lib.smartGetType(value)` returns the type of `value`. It is more advanced than JavaScript's `typeof` operator, as it can recognize arrays, dates, and other types (e.g., `new Error` returns `"error"`).
+  This smart type detection function can recognize these JS + Node.js types:
   1. null
   2. undefined
   3. NaN
