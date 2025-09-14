@@ -125,7 +125,7 @@ const lib = {
 
     readClipboardAsText: function() {
         try {
-            return navigator.clipboard.readText().then((clipText) => (document.querySelector(".editor").innerText += clipText));
+            return navigator.clipboard.readText();
         } catch (error) {
             return `Error: ${error.message}`
         }
