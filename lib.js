@@ -117,7 +117,7 @@ const lib = {
 
     copyTextToClipboard: function(string) {
         try {
-            return navigator.clipboard.writeText(str);
+            return navigator.clipboard.writeText(string);
         } catch (error) {
             return `Error: ${error.message}`
         }
