@@ -115,19 +115,33 @@ const lib = {
         }
     },
 
-    copyTextToClipboard: function(string) {
+    copyTextToClipboard: async function(string) {
         try {
-            return navigator.clipboard.writeText(string);
+            const permission = await navigator.permissions.query({
+                name: 'clipboard-write'
+            });
+            if (permission.state === 'denied') {
+                return "Clipboard access denied";
+            }
+
+            await navigator.clipboard.writeText(string);
         } catch (error) {
-            return `Error: ${error.message}`
+            return `Error: ${error.message}`;
         }
     },
 
-    readClipboardAsText: function() {
+    readClipboardAsText: async function(string) {
         try {
-            return navigator.clipboard.readText();
+            const permission = await navigator.permissions.query({
+                name: 'clipboard-read'
+            });
+            if (permission.state === 'denied') {
+                return "Clipboard access denied";
+            }
+
+            return await navigator.clipboard.readText();
         } catch (error) {
-            return `Error: ${error.message}`
+            return `Error: ${error.message}`;
         }
     },
 
