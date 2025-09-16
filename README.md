@@ -1,7 +1,7 @@
-# personal_js_lib
+# QuickieLibrary
 
-A collection of features that I wish vanilla JavaScript had, such as clamp, and some features I depend on, such as generating a random integer between two values.
-These are mainly tailored to my own needs. Currently, this is not an active project of mine; you can expect new features to be added on a monthly basis.
+## What is it?
+This is a JavaScript library that is a collection of features that I wish vanilla JavaScript had to streamline production. Features range from efficient math functions to string utilities to advanced type detection. This was first made as a personal library, but then I just decided to give it a home.
 
 ## Current features
 ### Math
