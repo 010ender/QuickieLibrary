@@ -277,7 +277,8 @@
 
                return a.state;
            } catch (error) {
-               return `Error: ${error.message}`
+               return `Error: ${error.message}`;
            }
        }
-   }
+   };
+   
