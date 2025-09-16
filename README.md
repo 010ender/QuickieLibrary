@@ -26,8 +26,8 @@ If `inMin === inMax`, the function will result in a division by zero.
   6. Replace non-word characters except for hyphens
   7. Replace multiple hyphens with one
 - `lib.validJSON(string)` returns `true` if `string` is valid JSON, otherwise returns `false`.
-- `lib.copyTextToClipboard(string)` copies `string` as text to the clipboard, returning a `Promise` that is resolved when the clipboard has been updated. **Needs `"clipboardRead"` or `"clipboardWrite"` permissions and only works in secure contexts**.
-- `lib.readClipboardAsText()` is a `Promise` that returns a string of the textual contents of the clipboard. Returns an empty string if the clipboard is empty or does not contain text. **Needs `"clipboardRead"` or `"clipboardWrite"` permissions and only works in secure contexts**.
+- `lib.copyTextToClipboard(string)` is an async function that copies `string` as text to the clipboard, returning a `Promise` that is resolved when the clipboard has been updated. **Needs `"clipboardRead"` or `"clipboardWrite"` permissions and only works in secure contexts**.
+- `lib.readClipboardAsText()` is an async function that returns a string of the textual contents of the clipboard. Returns an empty string if the clipboard is empty or does not contain text. **Needs `"clipboardRead"` or `"clipboardWrite"` permissions and only works in secure contexts**.
  
 ### Objects
 - `lib.objectIsEmpty(object)` returns true if `object` has no properties, returns false otherwise.
@@ -64,6 +64,7 @@ If `inMin === inMax`, the function will result in a division by zero.
   12. Buffers (specific to Node.js only)
   13. Proxies (outputs as "object")
   14. Revoked proxy (outputs as "proxy:revoked")
+- `lib.checkPermissions(permission)` returns the state of `permission`. Check [the Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API) for information about the Permissions API.
 
 ## Usage
 Download the personal_js_lib.js file, and add it to your project folder/wherever you wish. Check the specified path of the library, then use `<script src="path_to_the_js_lib"></script>` (but select your path).
