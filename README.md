@@ -67,7 +67,9 @@ If `inMin === inMax`, the function will result in a division by zero.
 - `lib.checkPermissions(permission)` returns the state of `permission`. Check [the Mozilla docs](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API) for information about the Permissions API.
 
 ## Usage
-Download the personal_js_lib.js file, and add it to your project folder/wherever you wish. Check the specified path of the library, then use `<script src="path_to_the_js_lib"></script>` (but select your path).
+Step 1: Download `lib.js` or the whole repo.<br>
+Step 2: Insert `<script src="lib.js"></script>` into your project. Remember to tweak the path if necessary.<br>
+Step 3: Use the library like so: `lib.[the name of the function you want]`. For example, `lib.randomNumber(0, 100)`.
 
 ## Examples
 Possible outcomes:
