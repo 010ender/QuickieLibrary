@@ -13,11 +13,9 @@
            }
        },
 
-       coinToss: function() {
+       coinToss: function(trueBias = 50) {
            try {
-               let coinResult = Math.round(Math.random());
-
-               if (coinResult === 1) {
+               if (Math.random() > trueBias / 100) {
                    return false;
                } else {
                    return true;
