@@ -13,6 +13,16 @@
            }
        },
 
+       coinToss: function() {
+           let coinResult = Math.round(Math.random())
+
+           if (coinResult === 1) {
+               return false;
+           } else {
+               return true;
+           }
+       },
+
        clamp: function(value, min, max) {
            try {
                return Math.min(Math.max(value, min), max);
@@ -142,6 +152,26 @@
            } catch (error) {
                return `Error: ${error.message}`;
            }
+       },
+
+       getLetterOfAlphabet: function(position) {
+           return "abcdefghijklmnopqrstuvwxyz".substring(position, position + 1);
+       },
+
+       randomString: function(length, randomCase = false) {
+           let string = "";
+
+           for (let i = 0; i < length; i++) {
+               let letter = lib.getLetterOfAlphabet(lib.randomNumber(0, 25));
+
+               if (randomCase && lib.coinToss()) {
+                   letter = letter.toUpperCase();
+               }
+
+               string += letter;
+           }
+
+           return string;
        },
 
        // OBJECTS
@@ -281,4 +311,3 @@
            }
        }
    };
-   
