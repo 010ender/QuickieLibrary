@@ -1,6 +1,6 @@
-   // 010ENDER'S PERSONAL JS LIBRARY
-   // CREATED FOR MYSELF AND OTHERS
-   // ADDS SIMPLE BUT ESSENTIAL FUNCTIONS THAT MAKE YOUR LIFE EASIER
+   // 010ENDER'S QUICKIE LIBRARY
+   // SMALL LIBRARY THAT ADDS SIMPLE BUT ESSENTIAL FUNCTIONS THAT MAKE YOUR LIFE EASIER
+   // FEATURES MATH, STRINGS, TIME, OBJECTS, ARRAYS, FILES AND MORE
    const lib = {
        // MATH
        randomNumber: function(min, max) {
@@ -15,7 +15,7 @@
 
        coinToss: function() {
            try {
-               let coinResult = Math.round(Math.random())
+               let coinResult = Math.round(Math.random());
 
                if (coinResult === 1) {
                    return false;
@@ -23,7 +23,7 @@
                    return true;
                }
            } catch (error) {
-               return `Error: ${error.message}`
+               return `Error: ${error.message}`;
            }
        },
 
@@ -162,7 +162,7 @@
            try {
                return "abcdefghijklmnopqrstuvwxyz".substring(position, position + 1);
            } catch (error) {
-               return `Error: ${error.message}`
+               return `Error: ${error.message}`;
            }
        },
 
@@ -186,7 +186,7 @@
 
                return string;
            } catch (error) {
-               return `Error: ${error.message}`
+               return `Error: ${error.message}`;
            }
        },
 
@@ -227,7 +227,7 @@
            try {
                return !value;
            } catch (error) {
-               return `Error: ${error.message}`
+               return `Error: ${error.message}`;
            }
        },
 
