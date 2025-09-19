@@ -14,12 +14,16 @@
        },
 
        coinToss: function() {
-           let coinResult = Math.round(Math.random())
+           try {
+               let coinResult = Math.round(Math.random())
 
-           if (coinResult === 1) {
-               return false;
-           } else {
-               return true;
+               if (coinResult === 1) {
+                   return false;
+               } else {
+                   return true;
+               }
+           } catch (error) {
+               return `Error: ${error.message}`
            }
        },
 
@@ -155,23 +159,35 @@
        },
 
        getLetterOfAlphabet: function(position) {
-           return "abcdefghijklmnopqrstuvwxyz".substring(position, position + 1);
+           try {
+               return "abcdefghijklmnopqrstuvwxyz".substring(position, position + 1);
+           } catch (error) {
+               return `Error: ${error.message}`
+           }
        },
 
-       randomString: function(length, randomCase = false) {
-           let string = "";
+       randomString: function(length, randomCase = false, numbers = false) {
+           try {
+               let string = "";
 
-           for (let i = 0; i < length; i++) {
-               let letter = lib.getLetterOfAlphabet(lib.randomNumber(0, 25));
+               for (let i = 0; i < length; i++) {
+                   let letter = lib.getLetterOfAlphabet(lib.randomNumber(0, 25));
 
-               if (randomCase && lib.coinToss()) {
-                   letter = letter.toUpperCase();
+                   if (randomCase && lib.coinToss()) {
+                       letter = letter.toUpperCase();
+                   }
+
+                   if (numbers && lib.coinToss()) {
+                       letter = lib.randomNumber(0, 9);
+                   }
+
+                   string += letter;
                }
 
-               string += letter;
+               return string;
+           } catch (error) {
+               return `Error: ${error.message}`
            }
-
-           return string;
        },
 
        // OBJECTS
