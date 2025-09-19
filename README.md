@@ -5,7 +5,8 @@ This is a JavaScript library that is a collection of features that I wish vanill
 
 ## Current features
 ### Math
-- `lib.randomNumber(min, max)` generates a random integer between `min` and `max`. Inclusive.
+- `lib.randomNumber(min, max)` generates a random integer between `min` and `max`. Inclusive. **Note that this function is not cryptographically secure.**
+- `lib.coinToss()` returns either `true` or `false` randomly. **Note that this function is not cryptographically secure.**
 - `lib.clamp(value, min, max)` returns `value` clamped between `min` and `max`. Inclusive.
 - `lib.lerp(start, end, amount)` performs linear interpolation on `start` and `end`, based on the weighting factor, `amount`.
 - `lib.map(value, inMin, inMax, outMin, outMax)` maps value from the input range defined by `inMin` and `inMax` to the output range defined by `outMin` and `outMax`.
@@ -28,6 +29,8 @@ If `inMin === inMax`, the function will result in a division by zero.
 - `lib.validJSON(string)` returns `true` if `string` is valid JSON, otherwise returns `false`.
 - `lib.copyTextToClipboard(string)` is an async function that copies `string` as text to the clipboard, returning a `Promise` that is resolved when the clipboard has been updated. **Needs `"clipboardRead"` or `"clipboardWrite"` permissions and only works in secure contexts**.
 - `lib.readClipboardAsText()` is an async function that returns a string of the textual contents of the clipboard. Returns an empty string if the clipboard is empty or does not contain text. **Needs `"clipboardRead"` or `"clipboardWrite"` permissions and only works in secure contexts**.
+- `lib.getLetterOfAlphabet(position)` returns the letter of the alphabet at `position` (zero-indexed, range is 0-25) as a string.
+- `lib.randomString(length, randomCase)` returns random sequences of letters (eg, `hfekjlnoxl` if `randomCase` is `false`, or `QENtbUFmnz` if `randomCase` is `true`) without numbers. **Note that this function is not cryptographically secure.**
  
 ### Objects
 - `lib.objectIsEmpty(object)` returns true if `object` has no properties, returns false otherwise.
