@@ -30,7 +30,7 @@ If `inMin === inMax`, the function will result in a division by zero.
 - `lib.copyTextToClipboard(string)` is an async function that copies `string` as text to the clipboard, returning a `Promise` that is resolved when the clipboard has been updated. **Needs `"clipboardRead"` or `"clipboardWrite"` permissions and only works in secure contexts**.
 - `lib.readClipboardAsText()` is an async function that returns a string of the textual contents of the clipboard. Returns an empty string if the clipboard is empty or does not contain text. **Needs `"clipboardRead"` or `"clipboardWrite"` permissions and only works in secure contexts**.
 - `lib.getLetterOfAlphabet(position)` returns the letter of the alphabet at `position` (zero-indexed, range is 0-25) as a string.
-- `lib.randomString(length, randomCase)` returns random sequences of letters (eg, `hfekjlnoxl` if `randomCase` is `false`, or `QENtbUFmnz` if `randomCase` is `true`) without numbers. **Note that this function is not cryptographically secure.**
+- `lib.randomString(length, randomCase, numbers)` returns random sequences of letters (eg, `hfekjlnoxl` if `randomCase` is `false`, or `QENtbUFmnz` if `randomCase` is `true`) with numbers if `numbers` is true, otherwise with no numbers. Default values for both `randomCase` and `numbers` are `false`. `**Note that this function is not cryptographically secure.**
  
 ### Objects
 - `lib.objectIsEmpty(object)` returns true if `object` has no properties, returns false otherwise.
