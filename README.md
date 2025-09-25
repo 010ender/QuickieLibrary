@@ -27,8 +27,8 @@ If `inMin === inMax`, the function will result in a division by zero.
   6. Replace non-word characters except for hyphens
   7. Replace multiple hyphens with one
 - `lib.validJSON(string)` returns `true` if `string` is valid JSON, otherwise returns `false`.
-- `lib.copyTextToClipboard(string)` is an async function that copies `string` as text to the clipboard, returning a `Promise` that is resolved when the clipboard has been updated. **Needs `"clipboardRead"` or `"clipboardWrite"` permissions and only works in secure contexts**.
-- `lib.readClipboardAsText()` is an async function that returns a string of the textual contents of the clipboard. Returns an empty string if the clipboard is empty or does not contain text. **Needs `"clipboardRead"` or `"clipboardWrite"` permissions and only works in secure contexts**.
+- `lib.copyTextToClipboard(string)` (async function) copies `string` as text to the clipboard, returning a `Promise` that is resolved when the clipboard has been updated. **Needs `"clipboardRead"` or `"clipboardWrite"` permissions and only works in secure contexts**.
+- `lib.readClipboardAsText()` (async function) returns a string of the textual contents of the clipboard. Returns an empty string if the clipboard is empty or does not contain text. **Needs `"clipboardRead"` or `"clipboardWrite"` permissions and only works in secure contexts**.
 - `lib.getLetterOfAlphabet(position)` returns the letter of the alphabet at `position` (zero-indexed, range is 0-25) as a string.
 - `lib.randomString(length, randomCase, numbers)` returns random sequences of letters (eg, `hfekjlnoxl` if `randomCase` is `false`, or `QENtbUFmnz` if `randomCase` is `true`) with numbers if `numbers` is true, otherwise with no numbers. Default values for both `randomCase` and `numbers` are `false`. `**Note that this function is not cryptographically secure.**
  
@@ -47,8 +47,14 @@ If `inMin === inMax`, the function will result in a division by zero.
 - `lib.unique(array)` returns a new array with only the unique elements from the input array, removing any duplicates.
 
 ### Files
-- `lib.getFile()` shows the file picker, then when the user selects a file, it returns a `File` object.
-- `lib.getFileWithOpts(options)` shows the file picker configured by `options`, then when the user selects a file, it returns a `File` object. Refer to Mozilla docs for configuring the file picker: [here](https://developer.mozilla.org/en-US/docs/Web/API/Window/showOpenFilePicker#parameters). If `options` is not defined, an error is returned.
+- `lib.getFile()` (async function) shows the file picker, then when the user selects a file, it returns a `File` object. **Will not work in Safari, Firefox, Webview, Samsung Internet, and Deno. Requires a secure context.**
+- `lib.getFileWithOpts(options)` (async function) shows the file picker configured by `options`, then when the user selects a file, it returns a `File` object. Refer to Mozilla docs for configuring the file picker: [here](https://developer.mozilla.org/en-US/docs/Web/API/Window/showOpenFilePicker#parameters). If `options` is not defined, an error is returned. **Will not work in Safari, Firefox, Webview, Samsung Internet, and Deno. Requires a secure context.**
+
+### Battery
+- `lib.batteryIsCharging()` (async function) returns a `Boolean` value, `true` if the device is charging, and `false` otherwise. **Will not work in Safari, Firefox and Webview. Requires a secure context.**
+- `lib.batteryLevel()` (async function) returns the level of the device's battery between `0.0` (fully discharged) and `1.0` (completely charged), as a `Number`. **Will not work in Safari, Firefox and Webview. Requires a secure context.**
+- `lib.batteryChargingTime()` (async function) returns the seconds until the device's battery is fully charged, as a `Number`. **Will not work in Safari, Firefox and Webview. Requires a secure context.**
+- `lib.batteryDischargingTime()` (async function) returns the seconds until the device's battery is fully discharged, as a `Number`. **Will not work in Safari, Firefox and Webview. Requires a secure context.**
 
 ### Misc
 - `lib.smartGetType(value)` returns the type of `value`. It is more advanced than JavaScript's `typeof` operator, as it can recognize arrays, dates, and other types (e.g., `new Error` returns `"error"`).
